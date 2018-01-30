@@ -16,8 +16,8 @@ public void setup()
 }
 public boolean palindrome(String word)
 { 
-  String noSpace = new String();
   word = word.toLowerCase();
+  String noSpace = new String();
   for (int i=0; i<word.length(); i++)
   {
     if (!word.substring(i, i+1).equals(" "))
