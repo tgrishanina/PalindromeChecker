@@ -15,15 +15,35 @@ public void setup()
   }
 }
 public boolean palindrome(String word)
-{
-  //your code here
-  return false;
-}
-public String reverse(String str)
-{
-    String sNew = new String();
-    //your code here
-    return sNew;
-}
+{ 
+  String noSpace = new String();
+  word = word.toLowerCase();
+  for (int i=0; i<word.length(); i++)
+  {
+    if (!word.substring(i, i+1).equals(" "))
+      noSpace = noSpace + word.substring(i, i+1);
+  }
 
+  String letters = new String();
+  for (int i=0; i<noSpace.length(); i++)
+  {
+    if (Character.isLetter(noSpace.charAt(i))==true)
+      letters = letters + noSpace.substring(i,i+1);
+  }
+
+  if (reverse(letters).equals(letters))
+  {
+    return true;
+  }
+  return false;
+ }
+ public String reverse(String str)
+{
+  String reverse = new String();
+  for (int i=str.length()-1; i>-1; i--)
+    {
+      reverse = reverse + str.substring(i,i+1);
+    }
+  return reverse;
+}
 
